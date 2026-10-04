@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: customer-api
+
+server:
+  port: 8181
+
+  datasource:
+    url: jdbc:h2:mem:customer_db
+    driverClassName: org.h2.Driver
+    username: sa
+    password: sa
+
+  # H2 Web Console (accessible at http://localhost:8080/h2-console)
+  h2:
+   console:
+    enabled: true
+
+  # Hibernate settings
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: auto
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
